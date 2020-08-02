@@ -7,4 +7,4 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __repr__(self):
-        return self.title
+        return f"title: {self.title} content: {self.content}"

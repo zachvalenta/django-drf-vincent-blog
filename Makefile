@@ -10,8 +10,9 @@ help:
 	@echo "super:      create superuser"
 	@echo "srv:        run dev server"
 	@echo
-	@echo "🖥  UI"
+	@echo "🖥  INTERFACES"
 	@echo
+	@echo "repl:       explore models from shell"
 	@echo "ind:        open index page"
 	@echo "admin:      open admin"
 	@echo
@@ -39,6 +40,9 @@ srv:
 #
 # 🖥  UI
 #
+
+repl:
+	poetry run python manage.py shell_plus --bpython
 
 ind:
 	open http://localhost:8000/index

@@ -7,6 +7,9 @@ authors = ["zachvalenta <zjv5002@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.6"
 django = "^3.0.8"
+djangorestframework = "^3.11.0"
+bpython = "^0.19"
+django-extensions = "^3.0.3"
 
 [tool.poetry.dev-dependencies]
 
