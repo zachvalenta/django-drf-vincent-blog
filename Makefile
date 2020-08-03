@@ -10,10 +10,15 @@ help:
 	@echo "mig:        make and run migrations"
 	@echo "super:      create superuser"
 	@echo
-	@echo "📡  API"
+	@echo "📡  API - shell"
 	@echo
-	@echo "list:      get all posts"
-	@echo "one:       get single post"
+	@echo "list:       get all posts"
+	@echo "one:        get single post"
+	@echo
+	@echo "🛰  API - browsable"
+	@echo
+	@echo "gui-list:   get all posts"
+	@echo "gui-one:    get single post"
 	@echo
 	@echo "🖥  OTHER INTERFACES"
 	@echo
@@ -43,14 +48,24 @@ super:
 	poetry run python manage.py createsuperuser
 
 #
-# 📡 API
+# 📡 API - shell
 #
 
 list:
-	open http://localhost:8000/posts/
+	poetry run http GET http://localhost:8000/posts/
 
 one:
-	open http://localhost:8000/posts/1
+	poetry run http GET http://localhost:8000/posts/1/
+
+#
+# 🛰 API - browsable
+#
+
+gui-list:
+	open http://localhost:8000/posts/
+
+gui-one:
+	open http://localhost:8000/posts/1/
 
 #
 # 🖥  UI
