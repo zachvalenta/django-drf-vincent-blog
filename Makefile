@@ -6,11 +6,16 @@ help:
 	@echo
 	@echo "🛠  UTILS"
 	@echo
+	@echo "srv:        run dev server"
 	@echo "mig:        make and run migrations"
 	@echo "super:      create superuser"
-	@echo "srv:        run dev server"
 	@echo
-	@echo "🖥  INTERFACES"
+	@echo "📡  API"
+	@echo
+	@echo "list:      get all posts"
+	@echo "one:       get single post"
+	@echo
+	@echo "🖥  OTHER INTERFACES"
 	@echo
 	@echo "repl:       explore models from shell"
 	@echo "ind:        open index page"
@@ -28,14 +33,24 @@ help:
 # 🛠 UTILS
 #
 
+srv:
+	poetry run python manage.py runserver
+
 mig:
 	poetry run python manage.py makemigrations; poetry run python manage.py migrate
 
 super:
 	poetry run python manage.py createsuperuser
 
-srv:
-	poetry run python manage.py runserver
+#
+# 📡 API
+#
+
+list:
+	open http://localhost:8000/posts/
+
+one:
+	open http://localhost:8000/posts/1
 
 #
 # 🖥  UI
